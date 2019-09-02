@@ -14,6 +14,7 @@ public class PostOffice implements Subject{
 	
 	public void addMail(Mail m) {
 		allMail.add(m);
+		Notify();
 	}
 	
 	public ArrayList<Mail> getState(){
@@ -32,8 +33,8 @@ public class PostOffice implements Subject{
 
 	@Override
 	public void Notify() {
-		for (Observer obs : observer) {
-			obs.update(this); // The class itself is a notifier
+		for(int i=0;i<observer.size();i++) {
+			observer.get(i).update(this);
 		}
 		
 	}
