@@ -1,2 +1,2 @@
 # ObserverDesignPatternActivity
-A simple stock market application using the observer pattern
+A simple mail application using the observer pattern
