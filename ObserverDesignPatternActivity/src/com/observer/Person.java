@@ -1,5 +1,7 @@
 package com.observer;
 
+import java.util.ArrayList;
+
 public class Person implements Observer {
 	private String name;
 
@@ -13,8 +15,18 @@ public class Person implements Observer {
 
 	@Override
 	public void update(Object o) {
-		// TODO Auto-generated method stub
-		
+		if(o instanceof PostOffice) {
+			 PostOffice po = (PostOffice) o;
+			 checkMail(po.getState());
+		}
+	}
+
+	public void checkMail(ArrayList<Mail> state) {
+		for(int i =0; i<state.size(); i++) {
+			if(this.name.equals(state.get(i).getReceiverName())){
+				System.out.println(name+" has received mail. \n\nContent:\n"+state.get(i).getContent());
+			}
+		}
 	}
 	
 }
