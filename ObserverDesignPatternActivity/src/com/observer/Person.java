@@ -1,6 +1,6 @@
 package com.observer;
 
-public class Person {
+public class Person implements Observer {
 	private String name;
 
 	public Person(String name) {
@@ -10,4 +10,11 @@ public class Person {
 	public String getName() {
 		return this.name;
 	}
+
+	@Override
+	public void update(Object o) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
